@@ -1,0 +1,45 @@
+server: 
+  port: 8888
+  
+spring: 
+  application:
+    name: springboot-basic-study03
+  datasource: 
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@192.168.35.33:1521:xe
+    username: springboot
+    password: sanduo
+  jpa:
+    hibernate:
+      ddl-auto: update #配置着一些项会自动生成表
+    database: ORACLE
+    show-sql: true
+    generate-ddl: true
+    properties: 
+      hibernate: 
+        dialect: org.hibernate.dialect.Oracle10gDialect
+#  batch:
+#    job:
+#      enabled: true
+##      names:  #启动时要执行的任务，默认job
+#    schema: classpath:/schema.sql
+##    table-prefix: batch #设置数据库表的前缀
+  activemq:
+    broker-url: tcp://192.168.35.33:61616
+  rabbitmq:
+    host: 192.168.35.33
+    port: 5672
+  thymeleaf: 
+    cache: false
+#security
+#  security:
+#    user:
+#      name: sanduo
+#      password: sanduo@123
+logging: 
+  file: logs/log.log
+  level: 
+    org.springframework.web: DEBUG
+      
+    
+

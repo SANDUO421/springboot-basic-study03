@@ -1,0 +1,63 @@
+# trace file
+
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+.apt_generated/
+# Package Files #
+#*.jar
+*.war
+*.ear
+*.zip
+*.tmp
+*.via
+*.rar
+
+# File Filter
+bin/
+logs/*
+
+# Folder Filter
+/target/
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+.classpath
+.project
+.ignore
+.factorypath
+.springBeans
+.settings/
+.apt_generated/
+bin/
+log/
+logs/
+#/.gradle/
+#build/

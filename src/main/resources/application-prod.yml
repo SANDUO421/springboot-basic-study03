@@ -1,0 +1,11 @@
+
+server: 
+  port: 9999
+
+logging: 
+  file: logs/log.log
+  level: 
+    org.springframework.web: INFO
+      
+    
+

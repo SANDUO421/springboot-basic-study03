@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+	<head>
+		<meta content="text/html;charset=UTF-8">
+		<title sec:authentication="name"></title><!--获取当前用户名-->
+		<link rel="stylesheet" th:href="@{bootstrap/css/bootstrap.min.css}" />
+		<script type="text/css">
+			body {
+				padding-top:50px;
+			}
+			.starter-template{
+				padding:40px 15px;
+				text-align: center;
+			}
+		</script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Spring Security 演示</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a th:href="@{/}">首页</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="container">
+				<div class="starter-template">
+					<h1 th:text="${msg.title}" ></h1>
+					<p th:text="${msg.content}" class="bg-primary"></p>
+					<div sec:authorize="hasRole('ROLE_ADMIN')"><!--当前用户有权限-->
+						<p class="bg-info" th:text="${msg.extraInfo}"></p>
+					</div>
+					<div sec:authorize="hasRole('ROLE_USER')">
+						<p class="bg-info" th:text="${msg.description}"></p>
+					</div>
+					<form th:action="@{/logout}" method="post">
+						
+						<input type="submit" value="注销" class="btn btn-primary" />
+					</form>
+				</div>
+			</div>
+		</nav>
+	</body>
+
+</html>
